@@ -12,9 +12,11 @@ public class ex8 {
         Scanner entrada = new Scanner(System.in);
         
         Funcionario listaFuncionarios[] = new Funcionario[QTDFUNCIONARIOS];
-    
+        
         // leitura das informações dos funcionários
         for(int i = 0; i < QTDFUNCIONARIOS; i++) {
+        	double diaria;
+        	int diasTrab;
             // instanciação do objeto da classe funcionario para cada elemento do vetor
             listaFuncionarios[i] = new Funcionario();
             System.out.println("\nFuncionario " + (i+1) );
@@ -23,9 +25,11 @@ public class ex8 {
             System.out.println("Nome: ");
             listaFuncionarios[i].nome = entrada.nextLine();
             System.out.println("Diaria:");
-            listaFuncionarios[i].diaria = entrada.nextFloat();
+            diaria = entrada.nextFloat();
             System.out.println("Dias Trabalhados:");
-            listaFuncionarios[i].diasTrab = entrada.nextInt();
+            diasTrab = entrada.nextInt();
+            
+            System.out.printf("Salario: %.2f\n", listaFuncionarios[i].calculaSalario(diasTrab, diaria));
             entrada.nextLine(); // esvazia o buffer do teclado
         } 
         
@@ -38,8 +42,7 @@ public class ex8 {
         System.out.println("\nFolha:");
         for (int i = 0; i < listaFunc.length; i++) {
         	System.out.println("Nome: "+listaFunc[i].nome);
-        	System.out.printf("Valor da Diaria: R$%.2f\n",listaFunc[i].diaria);
-        	System.out.printf("Salario: R$%.2f\n",listaFunc[i].diaria * listaFunc[i].diasTrab);
+        	System.out.printf("Salario: R$%.2f\n\n",listaFunc[i].salario);
 		}
         
     }
@@ -48,7 +51,7 @@ public class ex8 {
         // CALCULAR E RETORNAR O TOTAL DA FOLHA DE PAGAMENTO
     	double valor=0;
     	for (int i = 0; i < listaFunc.length; i++) {
-    		valor+=listaFunc[i].diaria * listaFunc[i].diasTrab;
+    		valor+=listaFunc[i].salario;
 			
 		}
         return valor;
