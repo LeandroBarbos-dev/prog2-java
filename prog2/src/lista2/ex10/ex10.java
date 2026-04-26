@@ -4,8 +4,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-import lista2.ex9.Veiculo;
-
 public class ex10 {
 	public static void main(String args[]) {
         
@@ -16,33 +14,35 @@ public class ex10 {
         String data, horario;
         int tipo;
         
-        Servico banho = new Servico("Banho",50,40);
-        Servico tosa = new Servico("Tosa",80,50);
-        Servico banhoETosa = new Servico("Banho e Tosa",110,90);
-        
+       
         
         
         for(int i = 0; i < QntAgendamentos; i++) {
         	
+        	
             
-        	listaAgendamentos[i] = new Servico();
+        	listaAgendamentos[i] = new Agendamento();
             System.out.println("\nServico " + (i+1) );
             System.out.println("Clinete: ");
             listaAgendamentos[i].nomeCliente = entrada.nextLine();
             System.out.println("Animal: ");
-            listaAgendamentos[i].animal = entrada.nextLine();
+            listaAgendamentos[i].pet = entrada.nextLine();
             
-            System.out.println("Tipo:\n1-Banho\n2-Tosa\n3Banho e Tosa\nEscolha(1-2-3):");
-            tipo = entrada.nextInt();
+            System.out.println("Tipo:\n1-Banho\n2-Tosa\n3-Banho e Tosa\nEscolha(1-2-3):");
+            
+            do{
+            	tipo = entrada.nextInt();
+            }while(tipo<1 || tipo>3);
+            
             switch(tipo) {
             case 1:
-            	listaAgendamentos[i].servico = banho;
+            	listaAgendamentos[i].servico = "Banho";
             	break;
             case 2:
-            	listaAgendamentos[i].servico = tosa;
+            	listaAgendamentos[i].servico = "Tosa";
             	break;
             case 3:
-            	listaAgendamentos[i].servico = banhoETosa;
+            	listaAgendamentos[i].servico = "Banho e Tosa";
             	break;
             }
             entrada.nextLine(); 
@@ -57,17 +57,16 @@ public class ex10 {
             
             
            
-            entrada.nextLine(); 
         } 
         entrada.close();
         gerarRelatorioAgenda(listaAgendamentos);        
        
     }
  
-    public static void gerarRelatorioAgenda(Servico[] listaServicos) {
+    public static void gerarRelatorioAgenda(Agendamento[] listaAgendamentos) {
         System.out.println("\nAgenda:");
-        for (int i = 0; i < listaServicos.length; i++) {
-        	listaServicos[i].imprimeInfo();
+        for (int i = 0; i < listaAgendamentos.length; i++) {
+        	listaAgendamentos[i].imprimeInfo();
         	
 		}
         
