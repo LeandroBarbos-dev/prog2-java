@@ -14,8 +14,6 @@ public static void main(String args[]) {
         String data, horario;
         int tipo;
         
-       
-        
         
         for(int i = 0; i < QntConsultas; i++) {
         	
@@ -23,7 +21,7 @@ public static void main(String args[]) {
             
         	listaConsulta[i] = new Consultas();
             System.out.println("\nConsulta " + (i+1) );
-            System.out.println("Clinete: ");
+            System.out.println("Cliente: ");
             listaConsulta[i].nomeCliente = entrada.nextLine();
             System.out.println("Pet: ");
             listaConsulta[i].pet = entrada.nextLine();
@@ -38,10 +36,7 @@ public static void main(String args[]) {
             
             System.out.println("Horario(HH:mm):");
             listaConsulta[i].horario = entrada.nextLine();
-            
-            
-            
-           
+       
         } 
         entrada.close();
         gerarRelatorioAgenda(listaConsulta);        

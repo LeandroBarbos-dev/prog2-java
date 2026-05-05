@@ -14,16 +14,11 @@ public class ex10 {
         String data, horario;
         int tipo;
         
-       
-        
-        
         for(int i = 0; i < QntAgendamentos; i++) {
-        	
-        	
-            
+ 
         	listaAgendamentos[i] = new Agendamento();
             System.out.println("\nServico " + (i+1) );
-            System.out.println("Clinete: ");
+            System.out.println("Cliente: ");
             listaAgendamentos[i].nomeCliente = entrada.nextLine();
             System.out.println("Animal: ");
             listaAgendamentos[i].pet = entrada.nextLine();
@@ -53,10 +48,7 @@ public class ex10 {
             
             System.out.println("Horario(HH:mm):");
             listaAgendamentos[i].horario = entrada.nextLine();
-            
-            
-            
-           
+ 
         } 
         entrada.close();
         gerarRelatorioAgenda(listaAgendamentos);        

@@ -2,8 +2,6 @@ package lista2.ex12;
 
 import java.util.Scanner;
 
-import lista2.ex7.Funcionario;
-
 public class ex12 {
 	 public static void main(String args[]) {
 	        

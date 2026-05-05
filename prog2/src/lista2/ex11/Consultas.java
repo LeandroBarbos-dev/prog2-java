@@ -12,7 +12,7 @@ public class Consultas {
 	public void imprimeInfo() {
         System.out.println("\nCliente: " + nomeCliente + 
                            " \n\t| Pet: " + pet + 
-                           " \n\t| Serviço: " + servico + 
+                           " \n\t| Procedimento: " + procedimento + 
                            " \n\t| Data: " + data + 
                            " \n\t| Horário: " + horario);
     }
