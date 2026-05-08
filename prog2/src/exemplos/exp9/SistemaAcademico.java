@@ -13,10 +13,12 @@ public class SistemaAcademico {
 	public static void main(String args[]) {
 
 		final int QTDALUNOS = 2;
+		final int QTDPROFS = 2;
 		final int QTDDISCIPLINAS = 2;
 		Scanner entrada = new Scanner(System.in);
 
 		Aluno listaAlunosUFOP[] = new Aluno[QTDALUNOS];
+		Professor listaProfUFOP[] = new Professor[QTDPROFS];
 
 		Pessoa p = new Pessoa();
 		p.setNome("UmaPessoaQualquer");
@@ -38,6 +40,23 @@ public class SistemaAcademico {
 		// instanciando um objeto utilizando construtor com parâmetros
 		listaAlunosUFOP[1] = new Aluno("000.000.000-00", "Jose", "11.1.1111", "Rua A numero 0");
 		listaAlunosUFOP[1].imprimeInfo();
+		
+		System.out.println("---");
+
+		// instanciando um objeto utilizando construtor sem parâmetros
+		listaProfUFOP[0] = new Professor();
+		listaProfUFOP[0].setNome("Leandro");
+		listaProfUFOP[0].setCpf("123.123.123-23");
+		listaProfUFOP[0].setCodigoProfessor("10.0.0000");
+		listaProfUFOP[0].setDepartamento("Engenharia");
+		listaProfUFOP[0].setEndereco("Rua B numero 1");
+		listaProfUFOP[0].imprimeInfo();
+
+		System.out.println("---");
+
+		// instanciando um objeto utilizando construtor com parâmetros
+		listaProfUFOP[1] = new Professor("000.000.123-00", "Padrim", "Rua A numero 0", "21.1.1111","Computação" );
+		listaProfUFOP[1].imprimeInfo();
 
 		System.out.println("---");
 

@@ -1,4 +1,4 @@
-package exemplos.exp9;
+package exemplos.exp10;
 
 public class Professor extends Pessoa {
 	
@@ -6,12 +6,6 @@ public class Professor extends Pessoa {
 	private String departamento;
 	
 	
-
-	public Professor() {
-		super();
-		
-	}
-
 	public Professor(String cpf, String nome, String end, String codigoProfessor, String departamento) {
 		super(cpf, nome, end);
 		this.codigoProfessor = codigoProfessor;

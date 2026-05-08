@@ -14,22 +14,37 @@ public static void main(String args[]) {
 	final int QTDALUNOS = 5;
 	final int QTDDISCIPLINAS = 5;
 	final int QTDTURMAS = 4;
+	final int QTDPROF = 3;
 	Scanner entrada = new Scanner(System.in);
 
 	Aluno listaAlunosUFOP[] = new Aluno[QTDALUNOS];
 	Disciplina listaDisciplinas[] = new Disciplina[QTDDISCIPLINAS];
+	Professor ListaProf[] = new Professor[QTDPROF];
 	//Turma listaTurmas[] = new Turma[QTDTURMAS];
 
 	System.out.println("----- Cadastro dos alunos -----\n");
 	System.out.println("Criando objetos 'manualmente', diretamente no código-fonte do programa.\n");
-	listaAlunosUFOP[0] = new Aluno("111.111.111-11", "Chaves", "11.1.1111", "Rua A, barril");
-	listaAlunosUFOP[1]  = new Aluno("222.222.222-22", "Chiquinha", "22.2.2222", "Rua A numero 2");
-	listaAlunosUFOP[2]  = new Aluno("333.333.333-33", "Quico", "33.3.3333", "Rua A numero 3");
-	listaAlunosUFOP[3]  = new Aluno("444.444.444-44", "Nhonho", "44.4.4444", "Rua B numero 4");
-	listaAlunosUFOP[4]  = new Aluno("555.555.555-55", "PC3pis", "55.5.5555", "Rua C numero 5");
+	listaAlunosUFOP[0] = new Aluno("111.111.111-11", "Chaves", "11.1.1111", "Rua A, barril","Sistemas de Informação", 2);
+	listaAlunosUFOP[1]  = new Aluno("222.222.222-22", "Chiquinha", "22.2.2222", "Rua A numero 2","Engenharia da Computação", 3);
+	listaAlunosUFOP[2]  = new Aluno("333.333.333-33", "Quico", "33.3.3333", "Rua A numero 3","Sistemas de Informação", 7);
+	listaAlunosUFOP[3]  = new Aluno("444.444.444-44", "Nhonho", "44.4.4444", "Rua B numero 4","Engenharia Eletrica", 5);
+	listaAlunosUFOP[4]  = new Aluno("555.555.555-55", "PC3pis", "55.5.5555", "Rua C numero 5","Sistemas de Informação", 6);
+	
+	
 
 	System.out.println("\n----- Relatorios - lista de alunos cadastrados -----");
 	imprimeAlunosCadastrados(listaAlunosUFOP);
+	
+	System.out.println("----- Cadastro dos alunos -----\n");
+	System.out.println("Criando objetos 'manualmente', diretamente no código-fonte do programa.\n");
+	ListaProf[0] = new Professor("000.000.123-00", "Leandro", "Rua A numero 1", "21.1.2011","Computação" );
+	ListaProf[1]  = new Professor("000.000.123-23", "Padrim", "Rua B numero 2", "21.1.1130","Engenharia" );
+	ListaProf[2]  = new Professor("000.123.123-23", "Fabio", "Rua C numero 3", "22.1.3230","Computação" );
+	
+	
+
+	System.out.println("\n----- Relatorios - lista de alunos cadastrados -----");
+	imprimeProfessoresCadastrados(ListaProf);
 
 	System.out.println("\n\n----- Cadastro das disciplinas -----\n");
 	System.out.println("Criando objetos 'manualmente', diretamente no código-fonte do programa.\n");
@@ -45,9 +60,9 @@ public static void main(String args[]) {
 	System.out.println("\n\n----- Cadastro das turmas -----\n");
 	System.out.println("Criando objetos 'manualmente', diretamente no código-fonte do programa.\n");
 
-	Turma prog1T11 = new Turma(listaDisciplinas[0], 2025, 2, 11, 40);
-	Turma prog2T21 = new Turma(listaDisciplinas[1], 2025, 2, 21, 40);
-	Turma prog2T22 = new Turma(listaDisciplinas[1], 2025, 2, 22, 40);
+	Turma prog1T11 = new Turma(listaDisciplinas[0], 2025, 2, 11, 40,ListaProf[0]);
+	Turma prog2T21 = new Turma(listaDisciplinas[1], 2025, 2, 21, 40,ListaProf[1]);
+	Turma prog2T22 = new Turma(listaDisciplinas[1], 2025, 2, 22, 40,ListaProf[2]);
 	prog1T11.imprimeInfo();
 	prog2T21.imprimeInfo();
 	prog2T22.imprimeInfo();
@@ -84,14 +99,22 @@ public static void main(String args[]) {
 }
 
 public static void imprimeAlunosCadastrados(Aluno[] lista) {
-	System.out.println("\nRelaC'C#o de alunos cadastrados:");
+	System.out.println("\nRelatorio de alunos cadastrados:");
+	for(int i = 0; i < lista.length; i++) {
+		lista[i].imprimeInfo();
+	}
+}
+
+
+public static void imprimeProfessoresCadastrados(Professor[] lista) {
+	System.out.println("\nRelatorio de professores cadastrados:");
 	for(int i = 0; i < lista.length; i++) {
 		lista[i].imprimeInfo();
 	}
 }
 
 public static void imprimeDisciplinas(Disciplina[] listaDisc) {
-	System.out.println("\nRelaC'C#o de disciplinas:");
+	System.out.println("\nRelatorio de disciplinas:");
 	for(int i = 0; i < listaDisc.length; i++) {
 		listaDisc[i].imprimeInfo();
 	}

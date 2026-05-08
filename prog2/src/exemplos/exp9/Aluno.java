@@ -30,6 +30,6 @@ public class Aluno extends Pessoa {
 		// o que acontece se tentarmos fazer a chamada como no comando abaixo? Por que
 		// isso acontece?
 		// System.out.println(this.nome + "(" + this.matricula + ") : " + this.nota);
-		System.out.println(super.getNome() + "(" + this.getMatricula() + ")");
+		System.out.println("Aluno: "+super.getNome() + "(" + this.getMatricula() + ")");
 	}
 }
