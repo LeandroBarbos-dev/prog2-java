@@ -4,7 +4,7 @@ package exemplos.exp10;
 Sistema acadêmico versão 9: herança, sobrescrita, ocultação de atributos, sobrecarga, polimorfismo, vinculação dinâmica de métodos, classes e métodos abstratos
 */
 public abstract class Pessoa {
-
+private static int contId;
 private String cpf;
 private String nome;
 private String endereco;
@@ -14,7 +14,7 @@ protected Pessoa(String cpf, String nome, String end) {
     this.setCpf(cpf);
     this.setNome(nome);
     this.setEndereco(end);
-    this.id++;
+    this.id = this.contId++;
 }
 
 public void setCpf(String str) { this.cpf = str; }
