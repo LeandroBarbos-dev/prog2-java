@@ -150,16 +150,20 @@ public static void imprimeDiarioTurmas(Turma[] lista) {
 
 public static void preencherDiarioClasse(Turma t) {
     Scanner entrada = new Scanner(System.in);
-    float tmpNota, tmpNotaEE;
+    float tmpNota, tmpNotaEE = -1;
     int tmpFaltas;
     for(int i = 0; i < t.getQtdAlunosMatriculados(); i++) {
         System.out.println(i + ". Matricula " + t.getListaMatriculas()[i].getMatricula());
-        System.out.print("\tNota: ");
-        tmpNota = entrada.nextFloat();
-        System.out.print("\tNotaEE (digite -1 se aluno não fez EE): ");
-        tmpNotaEE = entrada.nextFloat();
         System.out.print("\tQuantidade de Faltas: ");
         tmpFaltas = entrada.nextInt();
+        System.out.print("\tNota: ");
+        tmpNota = entrada.nextFloat();
+        if(tmpNota < 60 && tmpFaltas<17 ) {
+        	System.out.print("\tNotaEE (digite -1 se aluno não fez EE): ");
+            tmpNotaEE = entrada.nextFloat();
+        }
+        
+        
         
         t.lancarNota(t.getListaMatriculas()[i].getAluno(), tmpNota, tmpNotaEE, tmpFaltas);
     }
