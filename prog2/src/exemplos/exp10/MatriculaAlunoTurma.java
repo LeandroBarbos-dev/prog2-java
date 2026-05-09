@@ -10,6 +10,7 @@ private float notaFinal = -1;
 private float notaExameEspecial = -1;
 private int qtdFaltas = -1;
 
+
 public MatriculaAlunoTurma(Aluno a) {
     this.aluno = a;
 }
