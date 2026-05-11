@@ -1,11 +1,10 @@
 package exemplos.exp10;
 
 public class Professor extends Pessoa {
-	
+
 	private String codigoProfessor;
 	private String departamento;
-	
-	
+
 	public Professor(String cpf, String nome, String end, String codigoProfessor, String departamento) {
 		super(cpf, nome, end);
 		this.codigoProfessor = codigoProfessor;
@@ -27,12 +26,11 @@ public class Professor extends Pessoa {
 	public void setDepartamento(String departamento) {
 		this.departamento = departamento;
 	}
-	
+
 	@Override
 	public void imprimeInfo() {
-		System.out.println("Professor: "+ super.getNome() + "(" + this.getCodigoProfessor() + ") - Departamento: "+this.departamento );
+		System.out.println("Professor: " + super.getNome() + "(" + this.getCodigoProfessor() + ") - Departamento: "
+				+ this.departamento);
 	}
-	
-	
-	
+
 }

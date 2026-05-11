@@ -95,6 +95,8 @@ public static void main(String args[]) {
 	listaTurmas[4].matricularAluno(listaAlunosUFOP[2]);
 	listaTurmas[5].matricularAluno(listaAlunosUFOP[3]);
 	listaTurmas[6].matricularAluno(listaAlunosUFOP[4]);
+	listaTurmas[0].matricularAluno(listaAlunosUFOP[1]);
+	listaTurmas[0].matricularAluno(listaAlunosUFOP[2]);
 
 
 	imprimeTurmas(listaTurmas);
@@ -150,16 +152,26 @@ public static void imprimeDiarioTurmas(Turma[] lista) {
 
 public static void preencherDiarioClasse(Turma t) {
     Scanner entrada = new Scanner(System.in);
-    float tmpNota, tmpNotaEE;
+    float tmpNota, tmpNotaEE = -1;
     int tmpFaltas;
     for(int i = 0; i < t.getQtdAlunosMatriculados(); i++) {
         System.out.println(i + ". Matricula " + t.getListaMatriculas()[i].getMatricula());
-        System.out.print("\tNota: ");
-        tmpNota = entrada.nextFloat();
-        System.out.print("\tNotaEE (digite -1 se aluno não fez EE): ");
-        tmpNotaEE = entrada.nextFloat();
         System.out.print("\tQuantidade de Faltas: ");
+        do {
         tmpFaltas = entrada.nextInt();
+        }while(tmpFaltas <0);
+        System.out.print("\tNota: ");
+        do {
+        tmpNota = entrada.nextFloat();
+        }while(tmpNota < 0);
+        if(tmpNota < 60 && tmpFaltas<17 ) {
+        	System.out.print("\tNotaEE (digite -1 se aluno não fez EE): ");
+        	do {
+            tmpNotaEE = entrada.nextFloat();
+        	}while(tmpNotaEE <-1);
+        }
+        
+        
         
         t.lancarNota(t.getListaMatriculas()[i].getAluno(), tmpNota, tmpNotaEE, tmpFaltas);
     }

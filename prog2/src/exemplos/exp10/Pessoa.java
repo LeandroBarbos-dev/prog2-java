@@ -25,9 +25,10 @@ public String getNome() { return this.nome; }
 public int getID() { return id; }
 public String getEndereco() { return this.endereco; }
 
-public void imprimeInfo() {
+public abstract void imprimeInfo();
+/*{
     System.out.println(this.getID() + ". Nome: " + this.getNome() + " (" + this.getCpf() + ")");
-}
+}*/
 
 }
 
