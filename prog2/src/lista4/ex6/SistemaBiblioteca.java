@@ -84,7 +84,7 @@ public class SistemaBiblioteca {
         System.out.println("CADASTRO DAS MONOGRAFIAS\n");
         for(int i = 0; i < QTDLIVROS; i++) {
             // instanciação do objeto da classe livro para cada elemento do vetor
-            System.out.println("\n----------- Livro " + i + " -----------");
+            System.out.println("\n----------- Monografia " + i + " -----------");
             System.out.print("ISBN: ");
             String isbn = entrada.nextLine();
             System.out.print("Nome: ");
