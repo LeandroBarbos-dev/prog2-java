@@ -1,9 +1,11 @@
-package lista4.ex5;
+package lista4.ex7;
 
-/* Sistema Biblioteca versão 3: definição da classe Usuario */
+/* Sistema Biblioteca versão 5: definição da classe Usuario */
 public class Usuario {
+    
     // atributos de classe utilizado para contar quantos objetos são criados
     private static int contador = 0; 
+    
     // atributos de objeto
     private int id = 0; // identificador único atribuido a cada objeto criado com base no contador
     private String cpf;
@@ -21,6 +23,20 @@ public class Usuario {
         this.nome = nome;
     }
     
+    public void multar(double valor) {
+		this.saldo -= valor;
+		if(this.saldo < 0) {
+	        this.inadimplente = true;
+	    }
+	}
+	
+	public void pagar(double valor) {
+		this.saldo += valor;
+		if(this.saldo > 0) {
+	        this.inadimplente = false;
+	    }
+	}
+    
     public void setCpf(String str) {
         this.cpf = str;
     }
@@ -28,6 +44,7 @@ public class Usuario {
         this.nome = str;
     }
     
+    // perceba que nao foi criado um metodo setId. Por qual motivo ele não foi criado?
     public int getId() {
         return this.id;
     }
@@ -40,9 +57,10 @@ public class Usuario {
     public double getSaldo() {
         return this.saldo;
     }
-    
+    public static int getCont() {
+    	return contador;
+    }
     public void imprimeInfo() {
         System.out.println(this.getId() + " - " + this.getNome() + " (" + this.getCpf() + "): saldo = " + this.getSaldo());
     }
 }
-
