@@ -18,7 +18,6 @@ public class Livro extends Item{
         this.edicao = ed;
     }
     
-    
     // metodos get
     public int getEdicao() {
         return this.edicao;
