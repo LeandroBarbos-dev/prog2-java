@@ -30,6 +30,7 @@ public class RelatorioLFisica extends Relatorio{
 
 	@Override
 	public void gerarCorpo() {
+		System.out.println("\t|  VENDA  |  VALOR  |");
 		for (String dado : dados) {
 			System.out.println("\t - "+dado);
 		}
@@ -39,7 +40,7 @@ public class RelatorioLFisica extends Relatorio{
 
 	@Override
 	public void gerarRodape() {
-		System.out.println(" *** Numero de vendas: "+(dados.size()-1)+" ***");
+		System.out.println(" *** Numero de vendas: "+(dados.size())+" ***");
 		
 	}
 

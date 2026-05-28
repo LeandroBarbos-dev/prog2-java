@@ -9,22 +9,23 @@ public abstract class Relatorio {
 	
 	
 	
-	   public Relatorio(String titulo) {
-		titulo = titulo;
-		this.dados = new ArrayList<>();
-	}
+	 	public Relatorio(String titulo) {
+	 		this.titulo = titulo;
+	 		this.dados = new ArrayList<>();
+	 	}
 	   
-	   public abstract void carregarDados();
+	 	public abstract void carregarDados();
 
-	   public final void gerar() {
-	      gerarCabecalho();
-	      gerarCorpo();
-	      gerarRodape();
-	   }
+	 	public final void gerar() {
+	 		carregarDados();
+	 		gerarCabecalho();
+	 		gerarCorpo(); 
+	 		gerarRodape();
+	 	}
 	   
-	   public abstract void gerarCabecalho();
-	   public abstract void gerarCorpo();
-	   public abstract void gerarRodape();
+	 	public abstract void gerarCabecalho();
+	 	public abstract void gerarCorpo();
+	 	public abstract void gerarRodape();
 	}
 
 

@@ -5,18 +5,13 @@ public class Cartao extends Pagamento{
 	private int totalParcelas;
 	private int parcelasPagas;
 	private double valorTotal;
-	
-	
-	
-	
+
 	public Cartao(String pagador, double valor, int totalParcelas) {
 		super(pagador, valor, false);
 		this.totalParcelas = totalParcelas;
 		this.parcelasPagas = 0;
 		this.valorTotal = this.valor+valor*0.02;
 	}
-
-
 
 	@Override
 	public void imprime() {
@@ -41,15 +36,12 @@ public class Cartao extends Pagamento{
 					+" Valor Total: R$"+ this.valorTotal
 					+" Valor pago: R$"+(this.valorPago));
 		}
-		
 	}
-
-
 
 	@Override
 	public void processarPagamento() {
 		if(!pago) {
-			this.valorPago +=this.valorTotal/this.totalParcelas;
+			this.valorPago += this.valorTotal/this.totalParcelas;
 			this.parcelasPagas++;
 			if(this.totalParcelas == this.parcelasPagas) {
 				this.pago = true;
@@ -57,8 +49,5 @@ public class Cartao extends Pagamento{
 			System.out.println("Parcela paga no cartão de credito");
 		}else
 			System.out.println("Essa conta ja foi paga");
-		
-
 	}
-
 }

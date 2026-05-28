@@ -6,13 +6,10 @@ public class Boleto extends Pagamento{
 
 	LocalDate dataVencimento;
 	
-	
-	
 	public Boleto(String pagador, double valor, LocalDate dataVencimento) {
 		super(pagador, valor, false);
 		this.dataVencimento = dataVencimento;
 	}
-
 
 
 	@Override
@@ -48,7 +45,4 @@ public class Boleto extends Pagamento{
 		}
 		
 	}
-	
-	
-
 }

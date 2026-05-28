@@ -4,14 +4,10 @@ public class Pix extends Pagamento{
 	
 	private int desconto;
 	
-	
-	
 	public Pix(String pagador, double valor, int desconto) {
 		super(pagador, valor, false);
 		this.desconto = desconto;
 	}
-
-
 
 	@Override
 	public void imprime() {
@@ -32,8 +28,6 @@ public class Pix extends Pagamento{
 		}
 		
 	}
-
-
 
 	@Override
 	public void processarPagamento() {
