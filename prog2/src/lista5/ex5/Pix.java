@@ -17,18 +17,18 @@ public class Pix extends Pagamento{
 	public void imprime() {
 		if(pago) {
 			System.out.println(" -- Conta paga -- "
-					+"Metodo: Pix"
-					+"Pagador: "+ this.pagador
-					+"Valor: R$"+ this.valor
-					+"Desconto: R$"+ this.valor*(desconto/100)
-					+"Valor pago: R$"+(this.valor-this.valor*(desconto/100)));
+					+" Metodo: Pix"
+					+" Pagador: "+ this.pagador
+					+" Valor: R$"+ this.valor
+					+" Desconto: R$"+ this.valor*(desconto/100)
+					+" Valor pago: R$"+(this.valor-this.valor*(desconto/100)));
 		}else {
 			System.out.println(" -- Conta NÃo paga -- "
-					+"Metodo: Pix"
-					+"Pagador: "+ this.pagador
-					+"Valor: R$"+ this.valor
-					+"Desconto: R$"+ this.valor*(desconto/100)
-					+"Valor pago: R$"+this.valorPago);
+					+" Metodo: Pix"
+					+" Pagador: "+ this.pagador
+					+" Valor: R$"+ this.valor
+					+" Desconto: R$"+ this.valor*(desconto/100)
+					+" Valor pago: R$"+this.valorPago);
 		}
 		
 	}

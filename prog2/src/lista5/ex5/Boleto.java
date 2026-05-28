@@ -33,18 +33,18 @@ public class Boleto extends Pagamento{
 		
 		if(pago) {
 			System.out.println(" -- Conta paga -- "
-					+"Metodo: Boleto"
-					+"Pagador: "+ this.pagador
-					+"Valor: R$"+ this.valor
-					+"Desconto: R$"+ 0
-					+"Valor pago: R$"+this.valorPago);
+					+" Metodo: Boleto"
+					+" Pagador: "+ this.pagador
+					+" Valor: R$"+ this.valor
+					+" Desconto: R$"+ 0
+					+" Valor pago: R$"+this.valorPago);
 		}else {
 			System.out.println(" -- Conta NÃo paga -- "
-					+"Metodo: Boleto"
-					+"Pagador: "+ this.pagador
-					+"Valor: R$"+ this.valor
-					+"Desconto: R$"+ 0
-					+"Valor pago: R$"+this.valorPago);
+					+" Metodo: Boleto"
+					+" Pagador: "+ this.pagador
+					+" Valor: R$"+ this.valor
+					+" Desconto: R$"+ 0
+					+" Valor pago: R$"+this.valorPago);
 		}
 		
 	}

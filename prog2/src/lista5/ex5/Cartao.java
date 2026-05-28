@@ -9,7 +9,7 @@ public class Cartao extends Pagamento{
 	
 	
 	
-	public Cartao(String pagador, double valor, int desconto) {
+	public Cartao(String pagador, double valor, int totalParcelas) {
 		super(pagador, valor, false);
 		this.totalParcelas = totalParcelas;
 		this.parcelasPagas = 0;
@@ -22,24 +22,24 @@ public class Cartao extends Pagamento{
 	public void imprime() {
 		if(pago) {
 			System.out.println(" -- Conta paga -- "
-					+"Metodo: Pix"
-					+"Pagador: "+ this.pagador
-					+"Valor: R$"+ this.valor
-					+"Juros: 2%" 
-					+"Total de parcelas: "+ this.totalParcelas
-					+"Parcelas pagas: "+ this.parcelasPagas
-					+"Valor Total: R$"+ this.valorTotal
-					+"Valor pago: R$"+(this.valorPago));
+					+" Metodo: Pix"
+					+" Pagador: "+ this.pagador
+					+" Valor: R$"+ this.valor
+					+" Juros: 2%" 
+					+" Total de parcelas: "+ this.totalParcelas
+					+" Parcelas pagas: "+ this.parcelasPagas
+					+" Valor Total: R$"+ this.valorTotal
+					+" Valor pago: R$"+(this.valorPago));
 		}else {
 			System.out.println(" -- Conta NÃo paga -- "
-					+"Metodo: Pix"
-					+"Pagador: "+ this.pagador
-					+"Valor: R$"+ this.valor
-					+"Juros: 2%" 
-					+"Total de parcelas: "+ this.totalParcelas
-					+"Parcelas pagas: "+ this.parcelasPagas
-					+"Valor Total: R$"+ this.valorTotal
-					+"Valor pago: R$"+(this.valorPago));
+					+" Metodo: Pix"
+					+" Pagador: "+ this.pagador
+					+" Valor: R$"+ this.valor
+					+" Juros: 2%" 
+					+" Total de parcelas: "+ this.totalParcelas
+					+" Parcelas pagas: "+ this.parcelasPagas
+					+" Valor Total: R$"+ this.valorTotal
+					+" Valor pago: R$"+(this.valorPago));
 		}
 		
 	}
