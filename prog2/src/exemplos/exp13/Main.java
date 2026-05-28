@@ -16,8 +16,8 @@ public class Main {
         figuras[4] = new Triangulo(3, 5, 3, "vermelho");
         
         figuras[5] = new Circulo(14, "vermelho");
-        figuras[6] = new Trapezio(15,5,5, "vermelho");
-        figuras[7] = new Losango(5, "vermelho");
+        figuras[6] = new Trapezio(15,5,5, "azul");
+        figuras[7] = new Losango(5, "Roxo");
         
         figuras3d[0] = new Cubo(5, "Amarelo");
         figuras3d[1] = new Esfera(5, "Roxo");

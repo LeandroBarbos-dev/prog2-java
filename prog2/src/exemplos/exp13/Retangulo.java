@@ -32,19 +32,7 @@ public class Retangulo extends FiguraGeometrica implements IFigura2D {
     		System.out.println();
 		}
     } 
-    /*
-    public void desenha() {
-    	for (int i = 0; i < 1.5*this.comprimento; i++) {
-    		for (int j = 0; j < 1.5*this.comprimento; j++) {
-    			if((i>this.comprimento && j<i-this.comprimento)||(j>this.comprimento+i))
-    				System.out.print("  ");
-    			else
-    				System.out.print("xx");
-    		}
-    		System.out.println();
-		}
-    } 
-    */
+   
     public String toString() {
         return "Figura " + this.getID() + ": " + this.getTipo() + "(" + this.getCor() + ")\n\tPerimetro:"+this.perimetro()+"\n\tArea: "+this.area();
     }

@@ -8,31 +8,52 @@ public class Esfera extends FiguraGeometrica implements IFigura3D{
 	        this.raio =raio;
 	    }
 	    
-	    // o que acontecerá se excluir esse método?
-	   
-	    
-	    // o que acontecerá se excluir esse método?
 	    @Override
 	    public double volume() {
 	        return 4/3*3.14*raio*raio*raio;
 	    }
 	    
-	    // o que acontecerá se excluir esse método?
 	    @Override
 	  
 	    public void desenha() {
-	    	int r = this.raio;
-	    	for (int i = 0; i < this.raio*2; i++) {
-	    		for (int j = 0; j < this.raio*2; j++) {
-	    			if(Math.sqrt((i-r)*(i-r)+(j-r)*(j-r))<r) {
-	    				System.out.print("..");
-	    				//░ ▒ ▓  ▦ ▧ ▨ ▩
-	    			}else {
-	    				System.out.print("  ");
-	    			}
-	    		}
-	    		System.out.println();
-			}
+
+	        int r = this.raio;
+
+	        double luzX = r * 1.7;
+	        double luzY = r * 0.3;
+
+	        for (int i = 0; i < r * 2; i++) {
+
+	            for (int j = 0; j < r * 2; j++) {
+
+	                double dx = j - r;
+	                double dy = i - r;
+
+	                double distCentro = Math.sqrt(dx * dx + dy * dy);
+
+	                if (distCentro < r) {
+
+	                    double distLuz = Math.sqrt(
+	                        (j - luzX) * (j - luzX) +
+	                        (i - luzY) * (i - luzY)
+	                    );
+
+	                    double brilho = distLuz / (r * 2);
+
+	                    if (brilho < 0.30)
+	                        System.out.print("░░");
+	                    else if (brilho < 0.45)
+	                        System.out.print("▒▒");
+	                    else if (brilho < 0.65)
+	                        System.out.print("▓▓");
+	                    else
+	                        System.out.print("██");
+	                } else {
+	                    System.out.print("  ");
+	                }
+	            }
+	            System.out.println();
+	        }
 	    }
 	    
 	    public String toString() {

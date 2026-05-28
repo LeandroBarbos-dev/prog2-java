@@ -9,16 +9,11 @@ public class Cilindro extends FiguraGeometrica implements IFigura3D{
 	        this.altura = altura;
 	    }
 	    
-	    // o que acontecerá se excluir esse método?
-	   
-	    
-	    // o que acontecerá se excluir esse método?
 	    @Override
 	    public double volume() {
 	        return altura*raio*raio*3.14;
 	    }
-	    
-	    // o que acontecerá se excluir esse método?
+	   
 	    @Override
 	  
 	    public void desenha() {
